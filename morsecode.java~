@@ -1,0 +1,89 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+class morsecode {
+  public static String word;
+  public static boolean done = false;
+  
+  public static void main (String [] args){
+    
+    String[] english = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+      "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", 
+      "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
+      ,",", "?", "'", "!", "/", "(", ")", "&", ":", ";", "=", "+", "\"", "_", "$"};
+    String[] morseCode = { 
+      ".- ",     //a
+      "-... ",   //b
+      "-.-. ",   //c
+      "-.. ",    //d
+      ". ",      //e
+      "..-. ",   //f
+      "--. ",    //g
+      ".... ",   //h
+      ".. ",     //i
+      ".--- ",   //j
+      "-.- ",    //k
+      ".-.. ",   //l
+      "-- ",     //m
+      "-. ",     //n
+      "--- ",    //o
+      ".---. ",  //p
+      "--.- ",   //q
+      ".-. ",    //r
+      "... ",    //s
+      "- ",      //t
+      "..- ",    //u
+      "...- ",   //v
+      ".-- ",    //w
+      "-..- ",   //x
+      "-.-- ",   //y
+      "--.. ",   //z
+      ".---- ",  //1
+      "..--- ",  //2
+      "...-- ",  //3
+      "....- ",  //4
+      "..... ",  //5
+      "-.... ",  //6
+      "--... ",  //7
+      "---.. ",  //8
+      "----. ",  //9
+      "----- ",  //0
+      "--..-- ", //,
+      "..--.. ", //?
+      ".----.",  //'
+      "-.-.--",  //!
+      "-..-. ",  ///
+      "-.--. ",  //(
+      "-.--.- ", //)
+      ".-... ",  //&
+      "---... ", //:
+      "-.-.-. ", //;
+      "-...- ",  //=
+      ".-.-. ",  //+
+      ".-..-. ", //"
+      "..--.- ", //_
+      "...-..-", //$
+    };
+    
+    System.out.println("   This is an English to Morse Code Translator.  ");
+    System.out.println("   Please enter what you would like translate ");
+    System.out.println("               into Morse Code. ");
+    System.out.println("   Please note that spaces will show up as two   ");
+    System.out.println(" spaces and using a period or hyphen will not translate."); 
+    System.out.println(" ============================================ ");
+    
+    Scanner scan = new Scanner (System.in);
+    
+    while (!done){
+      
+      word = scan.nextLine();
+      word = word.toLowerCase();
+      
+      for (int i = 0; i < english.length; i++){
+        word = word.replace(english[i], morseCode [i]); 
+      }
+      System.out.println(word);
+    }
+    
+  }
+}
